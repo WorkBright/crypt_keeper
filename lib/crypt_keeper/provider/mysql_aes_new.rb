@@ -2,7 +2,7 @@ require 'crypt_keeper/log_subscriber/mysql_aes'
 
 module CryptKeeper
   module Provider
-    class MysqlAesNew
+    class MysqlAesNew < Base
       include CryptKeeper::Helper::SQL
       include CryptKeeper::Helper::DigestPassphrase
 
@@ -12,7 +12,7 @@ module CryptKeeper
       #
       #  options - A hash, :key and :salt are required
       def initialize(options = {})
-        ActiveSupport.run_load_hooks(:crypt_keeper_mysql_aes_log, self)
+        ::ActiveSupport.run_load_hooks(:crypt_keeper_mysql_aes_log, self)
         @key = digest_passphrase(options[:key], options[:salt])
       end
 

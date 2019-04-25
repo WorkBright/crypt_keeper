@@ -1,21 +1,17 @@
 language: ruby
 
 rvm:
-  - 1.9.3
-  - 2.0.0
-  - 2.1.1
+  - 2.2.7
+  - 2.3.4
+  - 2.4.1
+  - 2.5.3
+  - 2.6.0
 
 gemfile:
-  - gemfiles/activerecord_3_1.gemfile
-  - gemfiles/activerecord_3_2.gemfile
-  - gemfiles/activerecord_4_0.gemfile
-  - gemfiles/activerecord_4_1.gemfile
   - gemfiles/activerecord_4_2.gemfile
-
-matrix:
-  include:
-    - rvm: 2.2.0
-      gemfile: gemfiles/activerecord_4_2.gemfile
+  - gemfiles/activerecord_5_0.gemfile
+  - gemfiles/activerecord_5_1.gemfile
+  - gemfiles/activerecord_5_2.gemfile
 
 addons:
   postgresql: 9.3
